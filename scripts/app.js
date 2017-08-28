@@ -226,6 +226,7 @@
 
 	 	 app.getCacheS = function () {   
 	dbPromise.then(function(db) {
+  window.inicialLoadTime = performance.now();
   var tx = db.transaction('selectedTimetables', 'readonly');
   var store = tx.objectStore('selectedTimetables');
   return store.get(1);
